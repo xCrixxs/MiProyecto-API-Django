@@ -1,0 +1,66 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar producto - MiProyecto</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">MiProyecto</div>
+        <ul class="nav-links">
+            <li><a href="{% url 'inicio' %}">Inicio</a></li>
+            <li><a href="{% url 'productos' %}" class="active">Productos</a></li>
+            <li><a href="{% url 'contacto' %}">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section class="page-header">
+            <h1>Eliminar producto</h1>
+            <p>Confirma si deseas eliminar este registro.</p>
+        </section>
+
+        <section class="contact-card">
+            <div class="contact-icon">!</div>
+
+            <h2>¿Estás seguro?</h2>
+
+            <p>
+                Vas a eliminar el producto
+                <strong>{{ producto.nombre }}</strong>.
+                Esta acción no se puede deshacer.
+            </p>
+
+            <div class="contact-info">
+                <p><strong>ID:</strong> {{ producto.id }}</p>
+                <p><strong>Nombre:</strong> {{ producto.nombre }}</p>
+                <p><strong>Precio:</strong> ${{ producto.precio }}</p>
+                <p><strong>Cantidad:</strong> {{ producto.cantidad }}</p>
+                <p><strong>Categoría:</strong> {{ producto.categoria }}</p>
+            </div>
+
+            <form method="POST">
+                {% csrf_token %}
+                <button
+                    type="submit"
+                    class="btn-delete"
+                    style="background-color: #e74c3c; color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-weight: bold;">
+                    Sí, eliminar producto
+                </button>
+
+                <a href="{% url 'productos' %}" class="home-button">
+                    Cancelar
+                </a>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Proyecto Integrador - MiProyecto</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - MiProyecto</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">MiProyecto</div>
+        <ul class="nav-links">
+            <li><a href="{% url 'inicio' %}">Inicio</a></li>
+            <li><a href="{% url 'productos' %}">Productos</a></li>
+            <li><a href="{% url 'contacto' %}" class="active">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section class="page-header">
+            <h1>Contacto</h1>
+            <p>Información del Proyecto Integrador.</p>
+        </section>
+
+        <section class="contact-card">
+            <div class="contact-icon">✉</div>
+            <h2>¿Necesitas información?</h2>
+            <p>
+                MiProyecto es una aplicación web para administrar
+                y consultar productos de forma organizada.
+            </p>
+
+            <div class="contact-info">
+                <p><strong>Proyecto:</strong> MiProyecto</p>
+                <p><strong>Área:</strong> Ingeniería en Desarrollo de Software</p>
+                <p><strong>Año:</strong> 2026</p>
+            </div>
+
+            <a href="{% url 'inicio' %}" class="home-button">
+                Volver al inicio
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Proyecto Integrador - MiProyecto</p>
+    </footer>
+
+</body>
+</html>

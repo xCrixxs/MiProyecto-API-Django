@@ -1,0 +1,64 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - MiProyecto</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">MiProyecto</div>
+        <ul class="nav-links">
+            <li><a href="{% url 'inicio' %}" class="active">Inicio</a></li>
+            <li><a href="{% url 'productos' %}">Productos</a></li>
+            <li><a href="{% url 'contacto' %}">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section class="home-hero">
+            <span class="home-label">SISTEMA DE GESTIÓN</span>
+            <h1>Bienvenido a MiProyecto</h1>
+            <p>
+                Administra y consulta tus productos desde una
+                plataforma sencilla, organizada y fácil de utilizar.
+            </p>
+            <a href="{% url 'productos' %}" class="home-button">
+                Ir al módulo de productos
+            </a>
+        </section>
+
+        <section class="home-cards">
+            <article class="home-card">
+                <div class="home-icon">📦</div>
+                <h2>Gestión de productos</h2>
+                <p>Registra productos y consulta la información almacenada.</p>
+                <a href="{% url 'productos' %}">Ver productos →</a>
+            </article>
+
+            <article class="home-card">
+                <div class="home-icon">📝</div>
+                <h2>Registro organizado</h2>
+                <p>Guarda nombres, descripciones, precios y cantidades.</p>
+                <a href="{% url 'productos' %}">Registrar producto →</a>
+            </article>
+
+            <article class="home-card">
+                <div class="home-icon">✉️</div>
+                <h2>Contacto</h2>
+                <p>Consulta la sección de contacto del proyecto.</p>
+                <a href="{% url 'contacto' %}">Ir a contacto →</a>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Proyecto Integrador - MiProyecto</p>
+    </footer>
+
+</body>
+</html>
